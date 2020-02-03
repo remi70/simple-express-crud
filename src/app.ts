@@ -1,4 +1,5 @@
 import express, { Application } from "express";
+import { setRoutes } from "./app.routing";
 
 
 export const app: Application = express ();
@@ -10,3 +11,5 @@ app.use(express.urlencoded());
 app.listen(port,()=>{
     console.log(`Server is running on port:${port}`);
 })
+
+setRoutes(app);
