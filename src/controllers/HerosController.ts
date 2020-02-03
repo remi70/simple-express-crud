@@ -1,4 +1,4 @@
-import { Heros } from "../models/heros";
+import { Heros } from "../models/Heros";
 import { herosservice } from "../services/HerosService";
 
 

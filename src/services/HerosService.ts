@@ -1,4 +1,4 @@
-import { Heros } from "../models/heros";
+import { Heros } from "../models/Heros";
 
 class HerosService{
     test(){
