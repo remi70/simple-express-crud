@@ -15,7 +15,12 @@ class HerosController{
     findAll = (req:any,res:any)=>{
         res.send(this.values);
 
-}
+        }
+     findById= (req:any,res:any)=>{
+        let id = req.params.id;
+        res.send(id);
+        }
+      
 }
 
 const instance = new HerosController();
