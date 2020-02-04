@@ -3,22 +3,23 @@ import { herosservice } from "../services/HerosService";
 
 
 class HerosController{
-    private values:Array<Heros> = new Array<Heros>();
+    private values = new Map<number,Heros>();
     
-    save =(req:any,rest:any)=>{
+    save =(req:any,res:any)=>{
         let h:Heros = req.body;
         console.log(h);
-        this.values.push(h);
-        rest.send(herosservice.test());
+        this.values.set(h.id,h);
+        res.send(herosservice.test());
 
     }
     findAll = (req:any,res:any)=>{
-        res.send(this.values);
+        res.send(Array.from(this.values.values()));
 
         }
-     findById= (req:any,res:any)=>{
+     findAllById= (req:any,res:any)=>{
         let id = req.params.id;
-        res.send(id);
+            
+        res.send(this.values.get(id));
         }
       
 }
